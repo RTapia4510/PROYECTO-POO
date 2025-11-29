@@ -20,8 +20,6 @@ public class Cajero extends Empleado{
         this.gestionFactura = gestionFactura;
         this.gestionConsulta = gestionConsulta;
     }
-    public void generarFactura(){
-        
-    }
+    
     
 }

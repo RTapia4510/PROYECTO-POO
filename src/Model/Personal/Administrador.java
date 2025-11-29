@@ -24,34 +24,4 @@ public class Administrador extends Empleado{
         this.gestionConsultorio = gestionConsultorio;
         this.gestionConsulta = gestionConsulta;
     }
-    public void crearEmpleado(Empleado emp){
-        gestionEmpleado.registrar(emp);
-    }
-    public void modificarEmpleado(){
-        
-    }
-    public void eliminarEmpleado(String dni){
-        gestionEmpleado.eliminar(dni);
-    }
-    public void crearConsultorio(Consultorio consultorio){
-        gestionConsultorio.registrar(consultorio);
-    }
-    public void modificarConsultorio(){
-        
-    }
-    public void eliminarConsultorio(int codigo){
-        gestionConsultorio.eliminar(codigo);
-    }
-    public void buscarConsulta(){
-        
-    }
-    public void verOcupacion(){
-        
-    }
-    public void verProduccion(){
-        
-    }
-    public void verIngresos(){
-        
-    }
 }

@@ -25,40 +25,5 @@ public class Recepcionista extends Empleado{
         this.gestionCita = gestionCita;
         this.gestionConsulta = gestionConsulta;
     }
-    public void admitir(){
-        
-    }
-    public void darAlta(){
-        
-    }
-    public void generarFactura(){
-        
-    }
-    public void crearPaciente(Paciente pac){
-        gestionPaciente.registrar(pac);
-    }
-    public void modificarPaciente(){
-        
-    }
-    public void eliminarPaciente(String dni){
-        gestionPaciente.eliminar(dni);
-    }
-    public void crearCita(Cita cita){
-        gestionCita.registrar(cita);
-    }
-    public void modificarCita(){
-        
-    }
-    public void eliminarCita(int codigo){
-        gestionCita.eliminar(codigo);
-    }
-    public void validarMedico(){
-        
-    }
-    public void validarAmbiente(){
-        
-    }
-    public void buscarCita(){
-        
-    }
+    
 }

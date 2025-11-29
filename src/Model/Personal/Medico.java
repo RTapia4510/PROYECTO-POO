@@ -22,10 +22,5 @@ public class Medico extends Empleado{
         this.especialidad = especialidad;
         this.estado = estado;
     }
-    public void crearConsulta(Consulta consulta){
-        gestionConsulta.registrar(consulta);
-    }
-    public void buscarConsulta(){
-        
-    }
+    
 }
