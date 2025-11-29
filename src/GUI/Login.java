@@ -19,8 +19,9 @@ public class Login extends javax.swing.JFrame {
      */
     private GestorUsuario usuarios;
     public Login() {
-        initComponents();
         usuarios = new GestorUsuario();
+        initComponents();
+
         
     }
 
@@ -37,11 +38,10 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtClave = new javax.swing.JTextField();
-        boxEmp = new javax.swing.JComboBox<>();
         btnSesion = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        txtClave = new javax.swing.JPasswordField();
+        btnRegistro = new javax.swing.JButton();
+        boxEmp = new javax.swing.JComboBox<>();
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
         jLabel1.setText("CLINICA");
@@ -50,17 +50,24 @@ public class Login extends javax.swing.JFrame {
 
         jLabel3.setText("Ingrese contraseña:");
 
-        boxEmp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Recepcionista", "Médico", "Cajero", "Enfermero" }));
-        boxEmp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boxEmpActionPerformed(evt);
-            }
-        });
-
         btnSesion.setText("Iniciar Sesión");
         btnSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSesionActionPerformed(evt);
+            }
+        });
+
+        btnRegistro.setText("Registro");
+        btnRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroActionPerformed(evt);
+            }
+        });
+
+        boxEmp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Recepcionista", "Medico", "Cajero", "Enfermero" }));
+        boxEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxEmpActionPerformed(evt);
             }
         });
 
@@ -73,7 +80,9 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(123, 123, 123))
+                        .addGap(28, 28, 28)
+                        .addComponent(btnRegistro)
+                        .addGap(20, 20, 20))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -88,15 +97,20 @@ public class Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSesion)
-                    .addComponent(boxEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(boxEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSesion))
                 .addGap(135, 135, 135))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(btnRegistro)))
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -105,9 +119,9 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(boxEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(29, 29, 29)
                 .addComponent(btnSesion)
                 .addContainerGap(51, Short.MAX_VALUE))
         );
@@ -115,16 +129,35 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSesionActionPerformed
+        for (int i = 0; i < usuarios.getCantidad(); i++) {
+            if (this.usuarios.getUsuarios()[i].getUsername().equals(txtUser.getText())){
+                Menu menu = new Menu(usuarios.getUsuarios()[i]);
+                menu.setVisible(true);
+                dispose();
+        }else{
+            JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
+            break;
+        }}
+    }//GEN-LAST:event_btnSesionActionPerformed
+
+    private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
+        boolean a = true;
+        for (int i = 0; i < this.usuarios.getCantidad(); i++) {
+            if (this.usuarios.getUsuarios()[i].getUsername().equals(txtUser.getText())) {
+                JOptionPane.showMessageDialog(null, "Este nombre de usuario ya está en uso");
+                a = false;
+            }
+        }if (a) {
+            usuarios.registrar(new Usuario(txtUser.getText(),txtClave.getPassword().toString(),boxEmp.getSelectedItem().toString()));
+            JOptionPane.showMessageDialog(null, "Usuario registrado");
+        }
+    }//GEN-LAST:event_btnRegistroActionPerformed
+
     private void boxEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxEmpActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_boxEmpActionPerformed
-
-    private void btnSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSesionActionPerformed
-        // TODO add your handling code here:
-        Usuario x = new Usuario(txtUser.getText(), txtClave.getText(), boxEmp.getSelectedItem().toString());
-        Menu menu = new Menu(x);
-        menu.setVisible(true);
-    }//GEN-LAST:event_btnSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,11 +196,12 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> boxEmp;
+    private javax.swing.JButton btnRegistro;
     private javax.swing.JButton btnSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField txtClave;
+    private javax.swing.JPasswordField txtClave;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 }

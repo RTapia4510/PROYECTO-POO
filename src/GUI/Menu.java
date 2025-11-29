@@ -16,14 +16,70 @@ public class Menu extends javax.swing.JFrame {
      * Creates new form Menu
      */
     public Menu(Usuario user) {
-        switch(user.getRol()){
-            case "Administrador":break;
-            case "Recepcionista":break;
-            case "Medico":break;
-            case "Cajero":break;
-            case "Enfermero":break;
-        }
         initComponents();
+        lblUser.setText(user.getUsername());
+        switch(user.getRol()){
+            case "Administrador":
+                this.menuEmpleado.setEnabled(true);
+                this.menuConsultorio.setEnabled(true);
+                this.menuConsulta.setEnabled(true);
+                this.menuCita.setEnabled(false);
+                this.menuFactura.setEnabled(false);
+                this.menuPaciente.setEnabled(false);
+                this.adminI.setEnabled(true);
+                this.adminO.setEnabled(true);
+                this.adminP.setEnabled(true);
+                this.menuCheck.setEnabled(false);
+                break;
+            case "Recepcionista":
+                this.menuEmpleado.setEnabled(false);
+                this.menuConsultorio.setEnabled(false);
+                this.menuConsulta.setEnabled(false);
+                this.menuCita.setEnabled(true);
+                this.menuFactura.setEnabled(false);
+                this.menuPaciente.setEnabled(true);
+                this.adminI.setEnabled(false);
+                this.adminO.setEnabled(false);
+                this.adminP.setEnabled(false);
+                this.menuCheck.setEnabled(true);
+                break;
+            case "Medico":
+                this.menuEmpleado.setEnabled(false);
+                this.menuConsultorio.setEnabled(false);
+                this.menuConsulta.setEnabled(true);
+                this.menuCita.setEnabled(false);
+                this.menuFactura.setEnabled(false);
+                this.menuPaciente.setEnabled(false);
+                this.adminI.setEnabled(false);
+                this.adminO.setEnabled(false);
+                this.adminP.setEnabled(false);
+                this.menuCheck.setEnabled(false);
+                break;
+            case "Cajero":
+                this.menuEmpleado.setEnabled(false);
+                this.menuConsultorio.setEnabled(false);
+                this.menuConsulta.setEnabled(false);
+                this.menuCita.setEnabled(false);
+                this.menuFactura.setEnabled(true);
+                this.menuPaciente.setEnabled(false);
+                this.adminI.setEnabled(false);
+                this.adminO.setEnabled(false);
+                this.adminP.setEnabled(false);
+                this.menuCheck.setEnabled(false);
+                break;
+            case "Enfermero":
+                this.menuEmpleado.setEnabled(true);
+                this.menuConsultorio.setEnabled(true);
+                this.menuConsulta.setEnabled(true);
+                this.menuCita.setEnabled(false);
+                this.menuFactura.setEnabled(false);
+                this.menuPaciente.setEnabled(false);
+                this.adminI.setEnabled(false);
+                this.adminO.setEnabled(false);
+                this.adminP.setEnabled(false);
+                this.menuCheck .setEnabled(true);
+                break;
+        }
     }
 
     /**
@@ -36,20 +92,33 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenu3 = new javax.swing.JMenu();
+        jLabel1 = new javax.swing.JLabel();
+        lblUser = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        menuClinica = new javax.swing.JMenu();
         menuEmpleado = new javax.swing.JMenuItem();
-        menuPaciente = new javax.swing.JMenu();
         menuConsultorio = new javax.swing.JMenuItem();
+        menuPaciente = new javax.swing.JMenuItem();
+        menuConsulta = new javax.swing.JMenuItem();
         menuCita = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        menuFactura = new javax.swing.JMenuItem();
+        menuCheck = new javax.swing.JMenuItem();
+        menuReportes = new javax.swing.JMenu();
+        adminP = new javax.swing.JMenuItem();
+        adminI = new javax.swing.JMenuItem();
+        adminO = new javax.swing.JMenuItem();
 
         jMenu3.setText("jMenu3");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
 
-        jMenu1.setText("Acciones");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setText("BIENVENIDO");
+
+        lblUser.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblUser.setText("[Usuario]");
+
+        menuClinica.setText("Clínica");
 
         menuEmpleado.setText("Empleados");
         menuEmpleado.addActionListener(new java.awt.event.ActionListener() {
@@ -57,24 +126,40 @@ public class Menu extends javax.swing.JFrame {
                 menuEmpleadoActionPerformed(evt);
             }
         });
-        jMenu1.add(menuEmpleado);
-
-        menuPaciente.setText("Pacientes");
-        jMenu1.add(menuPaciente);
+        menuClinica.add(menuEmpleado);
 
         menuConsultorio.setText("Consultorios");
-        jMenu1.add(menuConsultorio);
+        menuClinica.add(menuConsultorio);
+
+        menuPaciente.setText("Pacientes");
+        menuClinica.add(menuPaciente);
+
+        menuConsulta.setText("Consultas");
+        menuClinica.add(menuConsulta);
 
         menuCita.setText("Citas");
-        jMenu1.add(menuCita);
+        menuClinica.add(menuCita);
 
-        jMenu2.setText("Consultas");
-        jMenu1.add(jMenu2);
+        menuFactura.setText("Facturas");
+        menuClinica.add(menuFactura);
 
-        jMenuItem4.setText("Facturas");
-        jMenu1.add(jMenuItem4);
+        menuCheck.setText("Check-In/Out");
+        menuClinica.add(menuCheck);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(menuClinica);
+
+        menuReportes.setText("Reportes");
+
+        adminP.setText("Producción");
+        menuReportes.add(adminP);
+
+        adminI.setText("Ingresos");
+        menuReportes.add(adminI);
+
+        adminO.setText("Ocupación");
+        menuReportes.add(adminO);
+
+        jMenuBar1.add(menuReportes);
 
         setJMenuBar(jMenuBar1);
 
@@ -82,11 +167,21 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblUser)
+                    .addComponent(jLabel1))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         pack();
@@ -94,6 +189,8 @@ public class Menu extends javax.swing.JFrame {
 
     private void menuEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuEmpleadoActionPerformed
         // TODO add your handling code here:
+        mEmpleados mEmp = new mEmpleados(null);
+        mEmp.setVisible(true);
     }//GEN-LAST:event_menuEmpleadoActionPerformed
 
     /**
@@ -126,20 +223,26 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuItem adminI;
+    private javax.swing.JMenuItem adminO;
+    private javax.swing.JMenuItem adminP;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JLabel lblUser;
+    private javax.swing.JMenuItem menuCheck;
     private javax.swing.JMenuItem menuCita;
+    private javax.swing.JMenu menuClinica;
+    private javax.swing.JMenuItem menuConsulta;
     private javax.swing.JMenuItem menuConsultorio;
     private javax.swing.JMenuItem menuEmpleado;
-    private javax.swing.JMenu menuPaciente;
+    private javax.swing.JMenuItem menuFactura;
+    private javax.swing.JMenuItem menuPaciente;
+    private javax.swing.JMenu menuReportes;
     // End of variables declaration//GEN-END:variables
 }

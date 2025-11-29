@@ -22,17 +22,7 @@ public class GestionEmpleado {
         this.empleados[this.cantidad] = emp;
         cantidad++;
     }
-    public void modificar(){
-        
-    }
-    public void eliminar(String dni){
-        for (int i = 0; i < cantidad; i++) {
-            if (this.empleados[i].getDni().contentEquals(dni)) {
-                for (int j = i; j < cantidad - 1; j++) {
-                    this.empleados[j] = this.empleados[j+1];
-                }this.empleados[cantidad - 1] = null;
-            }
-        }
-    }
+    
+    
     
 }

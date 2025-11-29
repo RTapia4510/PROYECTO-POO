@@ -15,19 +15,18 @@ public class GestorUsuario {
     private int cantidad;
 
     public GestorUsuario() {
-        this.usuarios = new Usuario[10];
+        this.usuarios = new Usuario[100];
         this.cantidad = 0;
         
     }
     public void registrar(Usuario user){
         this.usuarios[this.cantidad] = user;
-        cantidad++;
-        
+        cantidad++;   
     }
     public Usuario validar(String user,String pass){
         for (int i = 0; i < cantidad; i++) {
             if (this.usuarios[i].getUsername().equals(user) && this.usuarios[i].getContrasena().equals(pass)) {
-                return this.usuarios[i];
+                return usuarios[i];
             }
         }return null;
     }

@@ -14,6 +14,7 @@ public class Empleado {
     protected String apellidos;
     protected String telefono;
     protected String correo;
+    protected String rol;
 
     public Empleado(String dni, String nombres, String apellidos, String telefono, String correo) {
         this.dni = dni;
@@ -21,6 +22,14 @@ public class Empleado {
         this.apellidos = apellidos;
         this.telefono = telefono;
         this.correo = correo;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
     public String getDni() {

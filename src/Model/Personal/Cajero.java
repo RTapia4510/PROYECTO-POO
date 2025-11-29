@@ -12,13 +12,11 @@ import Gestores.GestionFactura;
  * @author Wendy
  */
 public class Cajero extends Empleado{
-    private GestionFactura gestionFactura;
-    private GestionConsulta gestionConsulta;
 
-    public Cajero(GestionFactura gestionFactura, GestionConsulta gestionConsulta, String dni, String nombres, String apellidos, String telefono, String correo) {
+
+    public Cajero(String dni, String nombres, String apellidos, String telefono, String correo) {
         super(dni, nombres, apellidos, telefono, correo);
-        this.gestionFactura = gestionFactura;
-        this.gestionConsulta = gestionConsulta;
+        this.rol = "Cajero";
     }
     
     
