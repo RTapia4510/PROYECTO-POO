@@ -19,7 +19,6 @@ public class Paciente {
     private String correo;
     private String contactoEmergencia;
     private Cita[] citas;
-    private HistoriaClinica historia;
 
     public Paciente(String dni, String nombres, String apellidos, String fechaNacimiento, String sexo, String telefono, String correo, String contactoEmergencia) {
         this.dni = dni;
@@ -105,14 +104,5 @@ public class Paciente {
         this.citas = citas;
     }
 
-    public HistoriaClinica getHistoria() {
-        return historia;
-    }
-
-    public void setHistoria(HistoriaClinica historia) {
-        this.historia = historia;
-    }
-
-    
 
 }

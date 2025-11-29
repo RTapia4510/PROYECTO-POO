@@ -18,23 +18,10 @@ public class GestionConsulta {
         this.consultas = new Consulta[50];
         this.cantidad = 0;
     }
-     public void registrar(Consulta consulta){
+    public void registrar(Consulta consulta){
         consulta.setCodigo(cantidad+1);
         this.consultas[this.cantidad] = consulta;
         cantidad++;
     }
-    public void modificar(){
-        
-    }
-    public void eliminar(int codigo){
-        for (int i = 0; i < cantidad; i++) {
-            if (this.consultas[i].getCodigo() == codigo) {
-                for (int j = i; j < cantidad - 1; j++) {
-                    this.consultas[j] = this.consultas[j+1];
-                }this.consultas[cantidad - 1] = null;
-            }
-        }
-    }
-    
     
 }

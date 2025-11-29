@@ -4,6 +4,8 @@
  */
 package Model.Clinica;
 
+import Model.Personal.Medico;
+
 /**
  *
  * @author Wendy

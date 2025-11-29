@@ -14,8 +14,7 @@ public class Factura {
     private double costeServicios;
     private String metodoPago;
 
-    public Factura(int codigo, double costeConsulta, double costeServicios, String metodoPago) {
-        this.codigo = codigo;
+    public Factura(double costeConsulta, double costeServicios, String metodoPago) {
         this.costeConsulta = costeConsulta;
         this.costeServicios = costeServicios;
         this.metodoPago = metodoPago;
