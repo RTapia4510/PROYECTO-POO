@@ -16,20 +16,16 @@ public class mEmpleados extends javax.swing.JFrame {
     private GestionEmpleado empleados;
     private DefaultTableModel model;
     
-    public mEmpleados(Empleado empleado) {
-        Empleado emp = empleado;
-        empleados = new GestionEmpleado();
+    public mEmpleados() {
         initComponents();
+        empleados = new GestionEmpleado();
         model = new DefaultTableModel();
         this.jTable1.setModel(model);
         model.addColumn("Nombres");
         model.addColumn("Apellidos");
         model.addColumn("DNI");
         model.addColumn("Cargo");
-        if (emp != null) {
-            empleados.registrar(emp);
-            generarFila(emp);
-        }
+        
  
     }
     public void generarFila(Empleado emp){
@@ -57,8 +53,6 @@ public class mEmpleados extends javax.swing.JFrame {
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnVer = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -180,7 +174,7 @@ public class mEmpleados extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new mEmpleados(null).setVisible(true);
+                new mEmpleados().setVisible(true);
             }
         });
     }

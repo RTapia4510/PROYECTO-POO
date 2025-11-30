@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import Model.Personal.Empleado;
+
 /**
  *
  * @author Wendy
@@ -42,8 +44,6 @@ public class DatosEmpleado extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
         btnAceptar = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel6.setText("Teléfono:");
 
@@ -185,13 +185,14 @@ public class DatosEmpleado extends javax.swing.JFrame {
 
     private void boxEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxEmpActionPerformed
         // TODO add your handling code here:
+        this.txtEspecialidad.setEnabled(false);
         if (boxEmp.getSelectedItem().toString() == "Medico") {
             this.txtEspecialidad.setEnabled(true);
         }else{this.txtEspecialidad.setEnabled(false);}
     }//GEN-LAST:event_boxEmpActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     /**

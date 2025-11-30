@@ -12,9 +12,6 @@ import Model.Personal.Usuario;
  */
 public class Menu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Menu
-     */
     public Menu(Usuario user) {
         initComponents();
         lblUser.setText(user.getUsername());
@@ -80,6 +77,7 @@ public class Menu extends javax.swing.JFrame {
                 this.menuCheck .setEnabled(true);
                 break;
         }
+        
     }
 
     /**
@@ -189,7 +187,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void menuEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuEmpleadoActionPerformed
         // TODO add your handling code here:
-        mEmpleados mEmp = new mEmpleados(null);
+        mEmpleados mEmp = new mEmpleados();
         mEmp.setVisible(true);
     }//GEN-LAST:event_menuEmpleadoActionPerformed
 

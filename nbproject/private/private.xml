@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Model/Personal/Empleado.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Model/Personal/Administrador.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Model/Clinica/Factura.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Gestores/GestionEmpleado.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Gestores/GestionFactura.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Model/Clinica/Cita.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Model/Clinica/Consultorio.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Model/Clinica/Consulta.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Model/Clinica/Paciente.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Gestores/GestionConsulta.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Gestores/GestionPaciente.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Gestores/GestionCita.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Model/Personal/Enfermero.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Model/Personal/Cajero.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/GUI/Login.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/GUI/Menu.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/GUI/mEmpleados.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/GUI/mCitas.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Model/Personal/Usuario.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/Gestores/GestorUsuario.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/GUI/mFacturas.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/GUI/mPacientes.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/GUI/DatosEmpleado.java</file>
+            <file>file:/C:/Users/Wendy/Documents/NetBeansProjects/PROYECTO-POO/src/GUI/Repositorio.java</file>
+        </group>
+    </open-files>
+</project-private>
